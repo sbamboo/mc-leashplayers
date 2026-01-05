@@ -87,6 +87,9 @@ public final class LeashProxyEntity extends TurtleEntity implements Leashable {
         setInvisible(true);
         noClip = true;
 
+        // Apply invisibility effect with infinite duration, amplifier 1, hide particles
+        this.addStatusEffect(new StatusEffectInstance(StatusEffects.INVISIBILITY, Integer.MAX_VALUE, 1, true, false));
+
         MinecraftServer server = getEntityWorld().getServer();
         if (server != null) {
             ServerScoreboard scoreboard = server.getScoreboard();
